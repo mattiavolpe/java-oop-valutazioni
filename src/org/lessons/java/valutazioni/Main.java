@@ -47,11 +47,11 @@ public class Main {
 				notAdmittedCounter++;
 			}
 			
-			if (students[i].avg < students[minId - 1].avg) {
+			if ((!students[i].success()) && students[i].avg < students[minId - 1].avg) {
 				minId = students[i].id;
 			}
 			
-			if (students[i].avg > students[maxId - 1].avg) {
+			if (students[i].success() && students[i].avg > students[maxId - 1].avg) {
 				maxId = students[i].id;
 			}
 		}
