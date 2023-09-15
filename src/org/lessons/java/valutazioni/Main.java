@@ -1,5 +1,6 @@
 package org.lessons.java.valutazioni;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
@@ -26,6 +27,22 @@ public class Main {
 			}
 		}
 		
-		System.out.println("\n\nTotal admitted students: " + admitted);		
+		System.out.println("\n\nTotal admitted students: " + admitted);
+		
+		Studente[] admittedStudents = new Studente[admitted];
+		Studente[] notAdmittedStudents = new Studente[students.length - admitted];
+		
+		byte admittedCounter = 0;
+		byte notAdmittedCounter = 0;
+		
+		for (byte i = 0; i < students.length; i++) {
+			if (students[i].success()) {
+				admittedStudents[admittedCounter] = students[i];
+				admittedCounter++;
+			} else {
+				notAdmittedStudents[notAdmittedCounter] = students[i];
+				notAdmittedCounter++;
+			}
+		}
 	}
 }
