@@ -35,6 +35,9 @@ public class Main {
 		byte admittedCounter = 0;
 		byte notAdmittedCounter = 0;
 		
+		int minId = students[0].id;
+		int maxId = students[0].id;
+		
 		for (byte i = 0; i < students.length; i++) {
 			if (students[i].success()) {
 				admittedStudents[admittedCounter] = students[i];
@@ -43,6 +46,17 @@ public class Main {
 				notAdmittedStudents[notAdmittedCounter] = students[i];
 				notAdmittedCounter++;
 			}
+			
+			if (students[i].avg < students[minId - 1].avg) {
+				minId = students[i].id;
+			}
+			
+			if (students[i].avg > students[maxId - 1].avg) {
+				maxId = students[i].id;
+			}
 		}
+		
+		System.out.println("\n\nMin id: " + minId);
+		System.out.println("Max id: " + maxId);
 	}
 }
