@@ -26,6 +26,6 @@ public class Main {
 			}
 		}
 		
-		System.out.println("Total admitted students: " + admitted);
+		System.out.println("\n\nTotal admitted students: " + admitted);		
 	}
 }
